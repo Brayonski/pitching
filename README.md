@@ -23,6 +23,7 @@ Author: [Brian Mutai](https://github.com/brayonski)
 + [x] Categorize pitches
 + [ ] comment on pitch posted
 + [ ] show comment of pitch according to pitch id
++ [ ] Liking and Disliking comments from people 
 
 
 ## Installation
