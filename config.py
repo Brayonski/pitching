@@ -16,7 +16,8 @@ class Config:
     MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
 
-
+class TestConfig(Config):
+    QLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://root:mutaikips@localhost/pitch'
 
 class DevConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://root:mutaikips@localhost/pitch'
@@ -28,5 +29,6 @@ class ProdConfig(Config):
 
 config_options={
     'development':DevConfig,
-    'production': ProdConfig
+    'production': ProdConfig,
+    'test':TestConfig
 }

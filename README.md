@@ -67,7 +67,6 @@ The following libraries are required
 *Jinja2==2.10
 *Mako==1.0.7
 *MarkupSafe==1.0
-*pkg-resources==0.0.0
 *psycopg2==2.7.5
 *psycopg2-binary==2.7.5
 *python-dateutil==2.7.3
