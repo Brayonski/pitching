@@ -4,7 +4,7 @@ import os
 
 class Config:
 
-    SECRET_KEY = os.environ.get('SECRET_KEY')
+    SECRET_KEY = os.environ.get('SECRET_KEY') or '1234'
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://root:mutaikips@localhost/pitch'
     UPLOADED_PHOTOS_DEST ='app/static/photos'
 
@@ -16,6 +16,10 @@ class Config:
     MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
 
+class ProdConfig(Config):
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
+    pass    
+
 class TestConfig(Config):
     QLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://root:mutaikips@localhost/pitch'
 
@@ -23,8 +27,6 @@ class DevConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://root:mutaikips@localhost/pitch'
     DEBUG = True    
 
-class ProdConfig(Config):
-    pass    
 
 
 config_options={
